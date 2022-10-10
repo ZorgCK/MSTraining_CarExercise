@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import io.micronaut.core.annotation.Nullable;
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Delete;
@@ -24,15 +25,15 @@ public class CarController
 		return DB.root.getCars();
 	}
 	
-	@Get(value = "/{model}")
-	public List<Car> getCarsByModel(@QueryValue("model") String model)
+	@Get(value = "/bymodel")
+	public List<Car> getCarsByModel(@Nullable @QueryValue String model)
 	{
 		return DB.root.getCars().stream().filter(car -> car.getModel().equalsIgnoreCase(model)).collect(
 			Collectors.toList());
 	}
 	
-	@Get(value = "/bybrand/{brand}")
-	public List<Car> getCarsByBrand(@QueryValue("brand") String brand)
+	@Get(value = "/bybrand")
+	public List<Car> getCarsByBrand(@Nullable @QueryValue String brand)
 	{
 		return DB.root.getCars().stream().filter(car -> car.getBrand().getName().equalsIgnoreCase(brand)).collect(
 			Collectors.toList());
