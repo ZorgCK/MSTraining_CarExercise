@@ -1,3 +1,5 @@
 micronaut:
   application:
     name: carExercise
+  server:
+    port: 8070

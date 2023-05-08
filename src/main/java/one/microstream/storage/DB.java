@@ -13,6 +13,8 @@ public class DB
 	static
 	{		
 		storageManager = EmbeddedStorageConfiguration.Builder()
+			.setChannelCount(2)
+			.setStorageDirectory("data")
 			.createEmbeddedStorageFoundation()
 			.createEmbeddedStorageManager(root)
 			.start();
