@@ -1,8 +1,9 @@
 package one.microstream.storage;
 
+import org.eclipse.store.storage.embedded.configuration.types.EmbeddedStorageConfiguration;
+import org.eclipse.store.storage.embedded.types.EmbeddedStorageManager;
+
 import one.microstream.domain.Company;
-import one.microstream.storage.embedded.configuration.types.EmbeddedStorageConfiguration;
-import one.microstream.storage.embedded.types.EmbeddedStorageManager;
 
 
 public class DB
