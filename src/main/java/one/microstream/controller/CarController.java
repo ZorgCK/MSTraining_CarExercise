@@ -1,5 +1,6 @@
 package one.microstream.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import io.micronaut.core.annotation.Nullable;
@@ -18,7 +19,7 @@ public class CarController
 	@Get
 	public List<Car> listCars()
 	{
-		return null;
+		return new ArrayList<Car>();
 	}
 	
 	@Get(value = "/bymodel")
